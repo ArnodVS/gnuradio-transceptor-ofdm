@@ -5,7 +5,7 @@
 # Title: Transceptor OFDM
 # Author: Arnold Valenzuela Sanchez
 # Description: Este diagrama de flujos tiene como objetivo desarrollar un trasceptor OFDM de forma experimental
-# Generated: Wed Sep 15 03:10:07 2021
+# Generated: Wed Sep 15 14:12:31 2021
 ##################################################
 
 from distutils.version import StrictVersion
@@ -76,7 +76,6 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
         self.pilot_symbols = pilot_symbols = ((1, 1, 1, -1,),)
         self.pilot_carriers = pilot_carriers = ((-21, -7, 7, 21,),)
         self.payload_mod = payload_mod = digital.constellation_qpsk()
-        self.packet_length_tag_key = packet_length_tag_key = "packet_len"
         self.occupied_carriers = occupied_carriers = (range(-26, -21) + range(-20, -7) + range(-6, 0) + range(1, 7) + range(8, 21) + range(22, 27),)
         self.length_tag_key = length_tag_key = "packet_len"
         self.header_mod = header_mod = digital.constellation_bpsk()
@@ -87,64 +86,62 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
         self.rolloff = rolloff = 0
         self.payload_equalizer = payload_equalizer = digital.ofdm_equalizer_simpledfe(fft_len, payload_mod.base(), occupied_carriers, pilot_carriers, pilot_symbols, 1)
         self.packet_len = packet_len = 96
-        self.header_formatter = header_formatter = digital.packet_header_ofdm(occupied_carriers, n_syms=1, len_tag_key=packet_length_tag_key, frame_len_tag_key=length_tag_key, bits_per_header_sym=header_mod.bits_per_symbol(), bits_per_payload_sym=payload_mod.bits_per_symbol(), scramble_header=False)
+        self.header_formatter = header_formatter = digital.packet_header_ofdm(occupied_carriers, n_syms=1, len_tag_key=length_tag_key, frame_len_tag_key=length_tag_key, bits_per_header_sym=header_mod.bits_per_symbol(), bits_per_payload_sym=payload_mod.bits_per_symbol(), scramble_header=False)
         self.header_equalizer = header_equalizer = digital.ofdm_equalizer_simpledfe(fft_len, header_mod.base(), occupied_carriers, pilot_carriers, pilot_symbols)
         self.hdr_format = hdr_format = digital.header_format_ofdm(occupied_carriers, 1, length_tag_key,)
-        self.gain = gain = 0.1
+        self.gain = gain = 0.15
         self.fc = fc = 0
         self.bw = bw = 20e6
 
         ##################################################
         # Blocks
         ##################################################
-        self.qtgui_tab_widget_1 = Qt.QTabWidget()
-        self.qtgui_tab_widget_1_widget_0 = Qt.QWidget()
-        self.qtgui_tab_widget_1_layout_0 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.qtgui_tab_widget_1_widget_0)
-        self.qtgui_tab_widget_1_grid_layout_0 = Qt.QGridLayout()
-        self.qtgui_tab_widget_1_layout_0.addLayout(self.qtgui_tab_widget_1_grid_layout_0)
-        self.qtgui_tab_widget_1.addTab(self.qtgui_tab_widget_1_widget_0, 'Rx Time')
-        self.qtgui_tab_widget_1_widget_1 = Qt.QWidget()
-        self.qtgui_tab_widget_1_layout_1 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.qtgui_tab_widget_1_widget_1)
-        self.qtgui_tab_widget_1_grid_layout_1 = Qt.QGridLayout()
-        self.qtgui_tab_widget_1_layout_1.addLayout(self.qtgui_tab_widget_1_grid_layout_1)
-        self.qtgui_tab_widget_1.addTab(self.qtgui_tab_widget_1_widget_1, 'Rx Header Mod')
-        self.qtgui_tab_widget_1_widget_2 = Qt.QWidget()
-        self.qtgui_tab_widget_1_layout_2 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.qtgui_tab_widget_1_widget_2)
-        self.qtgui_tab_widget_1_grid_layout_2 = Qt.QGridLayout()
-        self.qtgui_tab_widget_1_layout_2.addLayout(self.qtgui_tab_widget_1_grid_layout_2)
-        self.qtgui_tab_widget_1.addTab(self.qtgui_tab_widget_1_widget_2, 'Rx Paylaod Mod')
-        self.top_layout.addWidget(self.qtgui_tab_widget_1)
-        self.qtgui_tab_widget_0 = Qt.QTabWidget()
-        self.qtgui_tab_widget_0_widget_0 = Qt.QWidget()
-        self.qtgui_tab_widget_0_layout_0 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.qtgui_tab_widget_0_widget_0)
-        self.qtgui_tab_widget_0_grid_layout_0 = Qt.QGridLayout()
-        self.qtgui_tab_widget_0_layout_0.addLayout(self.qtgui_tab_widget_0_grid_layout_0)
-        self.qtgui_tab_widget_0.addTab(self.qtgui_tab_widget_0_widget_0, 'Spectrum')
-        self.qtgui_tab_widget_0_widget_1 = Qt.QWidget()
-        self.qtgui_tab_widget_0_layout_1 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.qtgui_tab_widget_0_widget_1)
-        self.qtgui_tab_widget_0_grid_layout_1 = Qt.QGridLayout()
-        self.qtgui_tab_widget_0_layout_1.addLayout(self.qtgui_tab_widget_0_grid_layout_1)
-        self.qtgui_tab_widget_0.addTab(self.qtgui_tab_widget_0_widget_1, 'Header Map')
-        self.qtgui_tab_widget_0_widget_2 = Qt.QWidget()
-        self.qtgui_tab_widget_0_layout_2 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.qtgui_tab_widget_0_widget_2)
-        self.qtgui_tab_widget_0_grid_layout_2 = Qt.QGridLayout()
-        self.qtgui_tab_widget_0_layout_2.addLayout(self.qtgui_tab_widget_0_grid_layout_2)
-        self.qtgui_tab_widget_0.addTab(self.qtgui_tab_widget_0_widget_2, 'Payload Map')
-        self.qtgui_tab_widget_0_widget_3 = Qt.QWidget()
-        self.qtgui_tab_widget_0_layout_3 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.qtgui_tab_widget_0_widget_3)
-        self.qtgui_tab_widget_0_grid_layout_3 = Qt.QGridLayout()
-        self.qtgui_tab_widget_0_layout_3.addLayout(self.qtgui_tab_widget_0_grid_layout_3)
-        self.qtgui_tab_widget_0.addTab(self.qtgui_tab_widget_0_widget_3, 'Multiplex Map')
-        self.top_layout.addWidget(self.qtgui_tab_widget_0)
-        self._gain_range = Range(0, 1, 0.05, 0.1, 200)
+        self.control = Qt.QTabWidget()
+        self.control_widget_0 = Qt.QWidget()
+        self.control_layout_0 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.control_widget_0)
+        self.control_grid_layout_0 = Qt.QGridLayout()
+        self.control_layout_0.addLayout(self.control_grid_layout_0)
+        self.control.addTab(self.control_widget_0, 'Controllers')
+        self.top_layout.addWidget(self.control)
+        self.tx = Qt.QTabWidget()
+        self.tx_widget_0 = Qt.QWidget()
+        self.tx_layout_0 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.tx_widget_0)
+        self.tx_grid_layout_0 = Qt.QGridLayout()
+        self.tx_layout_0.addLayout(self.tx_grid_layout_0)
+        self.tx.addTab(self.tx_widget_0, 'Spectrum Tx')
+        self.tx_widget_1 = Qt.QWidget()
+        self.tx_layout_1 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.tx_widget_1)
+        self.tx_grid_layout_1 = Qt.QGridLayout()
+        self.tx_layout_1.addLayout(self.tx_grid_layout_1)
+        self.tx.addTab(self.tx_widget_1, 'Constellation Tx')
+        self.top_layout.addWidget(self.tx)
+        self.rx = Qt.QTabWidget()
+        self.rx_widget_0 = Qt.QWidget()
+        self.rx_layout_0 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.rx_widget_0)
+        self.rx_grid_layout_0 = Qt.QGridLayout()
+        self.rx_layout_0.addLayout(self.rx_grid_layout_0)
+        self.rx.addTab(self.rx_widget_0, 'Time Rx')
+        self.rx_widget_1 = Qt.QWidget()
+        self.rx_layout_1 = Qt.QBoxLayout(Qt.QBoxLayout.TopToBottom, self.rx_widget_1)
+        self.rx_grid_layout_1 = Qt.QGridLayout()
+        self.rx_layout_1.addLayout(self.rx_grid_layout_1)
+        self.rx.addTab(self.rx_widget_1, 'Constellation Rx')
+        self.top_layout.addWidget(self.rx)
+        self._gain_range = Range(0, 1, 0.05, 0.15, 200)
         self._gain_win = RangeWidget(self._gain_range, self.set_gain, 'Potencia', "counter_slider", float)
-        self.top_layout.addWidget(self._gain_win)
+        self.control_grid_layout_0.addWidget(self._gain_win, 0, 1, 1, 1)
+        [self.control_grid_layout_0.setRowStretch(r,1) for r in range(0,1)]
+        [self.control_grid_layout_0.setColumnStretch(c,1) for c in range(1,2)]
         self._fc_range = Range(0, 0.9e9, 10e6, 0, 200)
         self._fc_win = RangeWidget(self._fc_range, self.set_fc, 'Frecuencia central', "counter_slider", float)
-        self.top_layout.addWidget(self._fc_win)
+        self.control_grid_layout_0.addWidget(self._fc_win, 0, 0, 1, 1)
+        [self.control_grid_layout_0.setRowStretch(r,1) for r in range(0,1)]
+        [self.control_grid_layout_0.setColumnStretch(c,1) for c in range(0,1)]
         self._bw_range = Range(20e6, 80e6, 20e6, 20e6, 200)
         self._bw_win = RangeWidget(self._bw_range, self.set_bw, 'Ancho de banda', "counter_slider", float)
-        self.top_layout.addWidget(self._bw_win)
+        self.control_grid_layout_0.addWidget(self._bw_win, 0, 2, 1, 1)
+        [self.control_grid_layout_0.setRowStretch(r,1) for r in range(0,1)]
+        [self.control_grid_layout_0.setColumnStretch(c,1) for c in range(2,3)]
         self.qtgui_time_sink_x_0 = qtgui.time_sink_c(
         	1024, #size
         	samp_rate, #samp_rate
@@ -195,7 +192,9 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
             self.qtgui_time_sink_x_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.pyqwidget(), Qt.QWidget)
-        self.qtgui_tab_widget_1_layout_0.addWidget(self._qtgui_time_sink_x_0_win)
+        self.rx_grid_layout_0.addWidget(self._qtgui_time_sink_x_0_win, 0, 0, 1, 1)
+        [self.rx_grid_layout_0.setRowStretch(r,1) for r in range(0,1)]
+        [self.rx_grid_layout_0.setColumnStretch(c,1) for c in range(0,1)]
         self.qtgui_freq_sink_x_0 = qtgui.freq_sink_c(
         	1024, #size
         	firdes.WIN_BLACKMAN_hARRIS, #wintype
@@ -208,7 +207,7 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
         self.qtgui_freq_sink_x_0.set_y_axis(-140, 10)
         self.qtgui_freq_sink_x_0.set_y_label('Relative Gain', 'dBm')
         self.qtgui_freq_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, 0.0, 0, "")
-        self.qtgui_freq_sink_x_0.enable_autoscale(True)
+        self.qtgui_freq_sink_x_0.enable_autoscale(False)
         self.qtgui_freq_sink_x_0.enable_grid(True)
         self.qtgui_freq_sink_x_0.set_fft_average(0.05)
         self.qtgui_freq_sink_x_0.enable_axis_labels(True)
@@ -238,7 +237,9 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
             self.qtgui_freq_sink_x_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_freq_sink_x_0_win = sip.wrapinstance(self.qtgui_freq_sink_x_0.pyqwidget(), Qt.QWidget)
-        self.qtgui_tab_widget_0_layout_0.addWidget(self._qtgui_freq_sink_x_0_win)
+        self.tx_grid_layout_0.addWidget(self._qtgui_freq_sink_x_0_win, 0, 0, 1, 1)
+        [self.tx_grid_layout_0.setRowStretch(r,1) for r in range(0,1)]
+        [self.tx_grid_layout_0.setColumnStretch(c,1) for c in range(0,1)]
         self.qtgui_const_sink_x_0_1_0 = qtgui.const_sink_c(
         	1024, #size
         	"Payload Mod Rx", #name
@@ -279,7 +280,9 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
             self.qtgui_const_sink_x_0_1_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_const_sink_x_0_1_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0_1_0.pyqwidget(), Qt.QWidget)
-        self.qtgui_tab_widget_1_layout_2.addWidget(self._qtgui_const_sink_x_0_1_0_win)
+        self.rx_grid_layout_1.addWidget(self._qtgui_const_sink_x_0_1_0_win, 0, 0, 1, 1)
+        [self.rx_grid_layout_1.setRowStretch(r,1) for r in range(0,1)]
+        [self.rx_grid_layout_1.setColumnStretch(c,1) for c in range(0,1)]
         self.qtgui_const_sink_x_0_1 = qtgui.const_sink_c(
         	1024, #size
         	"Header Mod Rx", #name
@@ -320,7 +323,9 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
             self.qtgui_const_sink_x_0_1.set_line_alpha(i, alphas[i])
 
         self._qtgui_const_sink_x_0_1_win = sip.wrapinstance(self.qtgui_const_sink_x_0_1.pyqwidget(), Qt.QWidget)
-        self.qtgui_tab_widget_1_layout_1.addWidget(self._qtgui_const_sink_x_0_1_win)
+        self.rx_grid_layout_1.addWidget(self._qtgui_const_sink_x_0_1_win, 0, 1, 1, 1)
+        [self.rx_grid_layout_1.setRowStretch(r,1) for r in range(0,1)]
+        [self.rx_grid_layout_1.setColumnStretch(c,1) for c in range(1,2)]
         self.qtgui_const_sink_x_0_0_0 = qtgui.const_sink_c(
         	1024, #size
         	"Multiplex", #name
@@ -361,96 +366,16 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
             self.qtgui_const_sink_x_0_0_0.set_line_alpha(i, alphas[i])
 
         self._qtgui_const_sink_x_0_0_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0_0_0.pyqwidget(), Qt.QWidget)
-        self.qtgui_tab_widget_0_layout_3.addWidget(self._qtgui_const_sink_x_0_0_0_win)
-        self.qtgui_const_sink_x_0_0 = qtgui.const_sink_c(
-        	1024, #size
-        	"Payload Mod", #name
-        	1 #number of inputs
-        )
-        self.qtgui_const_sink_x_0_0.set_update_time(0.10)
-        self.qtgui_const_sink_x_0_0.set_y_axis(-2, 2)
-        self.qtgui_const_sink_x_0_0.set_x_axis(-2, 2)
-        self.qtgui_const_sink_x_0_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, "")
-        self.qtgui_const_sink_x_0_0.enable_autoscale(False)
-        self.qtgui_const_sink_x_0_0.enable_grid(False)
-        self.qtgui_const_sink_x_0_0.enable_axis_labels(True)
-
-        if not True:
-          self.qtgui_const_sink_x_0_0.disable_legend()
-
-        labels = ['', '', '', '', '',
-                  '', '', '', '', '']
-        widths = [1, 1, 1, 1, 1,
-                  1, 1, 1, 1, 1]
-        colors = ["blue", "red", "red", "red", "red",
-                  "red", "red", "red", "red", "red"]
-        styles = [0, 0, 0, 0, 0,
-                  0, 0, 0, 0, 0]
-        markers = [0, 0, 0, 0, 0,
-                   0, 0, 0, 0, 0]
-        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
-                  1.0, 1.0, 1.0, 1.0, 1.0]
-        for i in xrange(1):
-            if len(labels[i]) == 0:
-                self.qtgui_const_sink_x_0_0.set_line_label(i, "Data {0}".format(i))
-            else:
-                self.qtgui_const_sink_x_0_0.set_line_label(i, labels[i])
-            self.qtgui_const_sink_x_0_0.set_line_width(i, widths[i])
-            self.qtgui_const_sink_x_0_0.set_line_color(i, colors[i])
-            self.qtgui_const_sink_x_0_0.set_line_style(i, styles[i])
-            self.qtgui_const_sink_x_0_0.set_line_marker(i, markers[i])
-            self.qtgui_const_sink_x_0_0.set_line_alpha(i, alphas[i])
-
-        self._qtgui_const_sink_x_0_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0_0.pyqwidget(), Qt.QWidget)
-        self.qtgui_tab_widget_0_layout_2.addWidget(self._qtgui_const_sink_x_0_0_win)
-        self.qtgui_const_sink_x_0 = qtgui.const_sink_c(
-        	1024, #size
-        	"Header Mod", #name
-        	1 #number of inputs
-        )
-        self.qtgui_const_sink_x_0.set_update_time(0.10)
-        self.qtgui_const_sink_x_0.set_y_axis(-2, 2)
-        self.qtgui_const_sink_x_0.set_x_axis(-2, 2)
-        self.qtgui_const_sink_x_0.set_trigger_mode(qtgui.TRIG_MODE_FREE, qtgui.TRIG_SLOPE_POS, 0.0, 0, "")
-        self.qtgui_const_sink_x_0.enable_autoscale(False)
-        self.qtgui_const_sink_x_0.enable_grid(False)
-        self.qtgui_const_sink_x_0.enable_axis_labels(True)
-
-        if not True:
-          self.qtgui_const_sink_x_0.disable_legend()
-
-        labels = ['', '', '', '', '',
-                  '', '', '', '', '']
-        widths = [1, 1, 1, 1, 1,
-                  1, 1, 1, 1, 1]
-        colors = ["blue", "red", "red", "red", "red",
-                  "red", "red", "red", "red", "red"]
-        styles = [0, 0, 0, 0, 0,
-                  0, 0, 0, 0, 0]
-        markers = [0, 0, 0, 0, 0,
-                   0, 0, 0, 0, 0]
-        alphas = [1.0, 1.0, 1.0, 1.0, 1.0,
-                  1.0, 1.0, 1.0, 1.0, 1.0]
-        for i in xrange(1):
-            if len(labels[i]) == 0:
-                self.qtgui_const_sink_x_0.set_line_label(i, "Data {0}".format(i))
-            else:
-                self.qtgui_const_sink_x_0.set_line_label(i, labels[i])
-            self.qtgui_const_sink_x_0.set_line_width(i, widths[i])
-            self.qtgui_const_sink_x_0.set_line_color(i, colors[i])
-            self.qtgui_const_sink_x_0.set_line_style(i, styles[i])
-            self.qtgui_const_sink_x_0.set_line_marker(i, markers[i])
-            self.qtgui_const_sink_x_0.set_line_alpha(i, alphas[i])
-
-        self._qtgui_const_sink_x_0_win = sip.wrapinstance(self.qtgui_const_sink_x_0.pyqwidget(), Qt.QWidget)
-        self.qtgui_tab_widget_0_layout_1.addWidget(self._qtgui_const_sink_x_0_win)
+        self.tx_grid_layout_1.addWidget(self._qtgui_const_sink_x_0_0_0_win, 0, 0, 1, 1)
+        [self.tx_grid_layout_1.setRowStretch(r,1) for r in range(0,1)]
+        [self.tx_grid_layout_1.setColumnStretch(c,1) for c in range(0,1)]
         self.fft_vxx_1 = fft.fft_vcc(fft_len, True, (), True, 1)
         self.fft_vxx_0_0 = fft.fft_vcc(fft_len, True, (()), True, 1)
         self.fft_vxx_0 = fft.fft_vcc(fft_len, False, (()), True, 1)
         self.digital_protocol_formatter_bb_0 = digital.protocol_formatter_bb(hdr_format, length_tag_key)
         self.digital_packet_headerparser_b_0 = digital.packet_headerparser_b(header_formatter.base())
         self.digital_ofdm_sync_sc_cfb_0 = digital.ofdm_sync_sc_cfb(fft_len, fft_len/4, False)
-        self.digital_ofdm_serializer_vcc_payload = digital.ofdm_serializer_vcc(fft_len, occupied_carriers, length_tag_key, packet_length_tag_key, 1, '', True)
+        self.digital_ofdm_serializer_vcc_payload = digital.ofdm_serializer_vcc(fft_len, occupied_carriers, length_tag_key, 'packet_length_tag_key', 1, '', True)
         self.digital_ofdm_serializer_vcc_header = digital.ofdm_serializer_vcc(fft_len, occupied_carriers, length_tag_key, '', 0, '', True)
         self.digital_ofdm_frame_equalizer_vcvc_1 = digital.ofdm_frame_equalizer_vcvc(payload_equalizer.base(), fft_len/4, length_tag_key, True, 0)
         self.digital_ofdm_frame_equalizer_vcvc_0 = digital.ofdm_frame_equalizer_vcvc(header_equalizer.base(), fft_len/4, length_tag_key, True, 1)
@@ -470,7 +395,7 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
                   (),
                   0,
             )
-        self.digital_crc32_bb_0_0 = digital.crc32_bb(True, packet_length_tag_key, True)
+        self.digital_crc32_bb_0_0 = digital.crc32_bb(True, 'packet_length_tag_key', True)
         self.digital_crc32_bb_0 = digital.crc32_bb(False, length_tag_key, True)
         self.digital_constellation_decoder_cb_1 = digital.constellation_decoder_cb(payload_mod.base())
         self.digital_constellation_decoder_cb_0 = digital.constellation_decoder_cb(header_mod.base())
@@ -481,7 +406,7 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
         self.blocks_tag_gate_0 = blocks.tag_gate(gr.sizeof_gr_complex * 1, False)
         self.blocks_tag_debug_1 = blocks.tag_debug(gr.sizeof_char*1, 'Rx Bytes', ""); self.blocks_tag_debug_1.set_display(True)
         self.blocks_stream_to_tagged_stream_0 = blocks.stream_to_tagged_stream(gr.sizeof_char, 1, packet_len, length_tag_key)
-        self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(payload_mod.bits_per_symbol(), 8, packet_length_tag_key, True, gr.GR_LSB_FIRST)
+        self.blocks_repack_bits_bb_0_1 = blocks.repack_bits_bb(payload_mod.bits_per_symbol(), 8, 'packet_length_tag_key', True, gr.GR_LSB_FIRST)
         self.blocks_repack_bits_bb_0_0 = blocks.repack_bits_bb(8, 1, length_tag_key, False, gr.GR_LSB_FIRST)
         self.blocks_repack_bits_bb_0 = blocks.repack_bits_bb(8, payload_mod.bits_per_symbol(), length_tag_key, False, gr.GR_LSB_FIRST)
         self.blocks_multiply_xx_0 = blocks.multiply_vcc(1)
@@ -510,9 +435,7 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_tagged_stream_mux_0, 0), (self.digital_ofdm_carrier_allocator_cvc_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.qtgui_const_sink_x_0_0_0, 0))
         self.connect((self.digital_chunks_to_symbols_xx_0, 0), (self.blocks_tagged_stream_mux_0, 0))
-        self.connect((self.digital_chunks_to_symbols_xx_0, 0), (self.qtgui_const_sink_x_0, 0))
         self.connect((self.digital_chunks_to_symbols_xx_0_0, 0), (self.blocks_tagged_stream_mux_0, 1))
-        self.connect((self.digital_chunks_to_symbols_xx_0_0, 0), (self.qtgui_const_sink_x_0_0, 0))
         self.connect((self.digital_constellation_decoder_cb_0, 0), (self.digital_packet_headerparser_b_0, 0))
         self.connect((self.digital_constellation_decoder_cb_1, 0), (self.blocks_repack_bits_bb_0_1, 0))
         self.connect((self.digital_crc32_bb_0, 0), (self.blocks_repack_bits_bb_0, 0))
@@ -564,20 +487,13 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
     def set_payload_mod(self, payload_mod):
         self.payload_mod = payload_mod
 
-    def get_packet_length_tag_key(self):
-        return self.packet_length_tag_key
-
-    def set_packet_length_tag_key(self, packet_length_tag_key):
-        self.packet_length_tag_key = packet_length_tag_key
-        self.set_header_formatter(digital.packet_header_ofdm(self.occupied_carriers, n_syms=1, len_tag_key=self.packet_length_tag_key, frame_len_tag_key=self.length_tag_key, bits_per_header_sym=header_mod.bits_per_symbol(), bits_per_payload_sym=payload_mod.bits_per_symbol(), scramble_header=False))
-
     def get_occupied_carriers(self):
         return self.occupied_carriers
 
     def set_occupied_carriers(self, occupied_carriers):
         self.occupied_carriers = occupied_carriers
         self.set_payload_equalizer(digital.ofdm_equalizer_simpledfe(self.fft_len, payload_mod.base(), self.occupied_carriers, self.pilot_carriers, self.pilot_symbols, 1))
-        self.set_header_formatter(digital.packet_header_ofdm(self.occupied_carriers, n_syms=1, len_tag_key=self.packet_length_tag_key, frame_len_tag_key=self.length_tag_key, bits_per_header_sym=header_mod.bits_per_symbol(), bits_per_payload_sym=payload_mod.bits_per_symbol(), scramble_header=False))
+        self.set_header_formatter(digital.packet_header_ofdm(self.occupied_carriers, n_syms=1, len_tag_key=self.length_tag_key, frame_len_tag_key=self.length_tag_key, bits_per_header_sym=header_mod.bits_per_symbol(), bits_per_payload_sym=payload_mod.bits_per_symbol(), scramble_header=False))
         self.set_header_equalizer(digital.ofdm_equalizer_simpledfe(self.fft_len, header_mod.base(), self.occupied_carriers, self.pilot_carriers, self.pilot_symbols))
         self.set_hdr_format(digital.header_format_ofdm(self.occupied_carriers, 1, self.length_tag_key,))
 
@@ -586,7 +502,7 @@ class trx_ofdm(gr.top_block, Qt.QWidget):
 
     def set_length_tag_key(self, length_tag_key):
         self.length_tag_key = length_tag_key
-        self.set_header_formatter(digital.packet_header_ofdm(self.occupied_carriers, n_syms=1, len_tag_key=self.packet_length_tag_key, frame_len_tag_key=self.length_tag_key, bits_per_header_sym=header_mod.bits_per_symbol(), bits_per_payload_sym=payload_mod.bits_per_symbol(), scramble_header=False))
+        self.set_header_formatter(digital.packet_header_ofdm(self.occupied_carriers, n_syms=1, len_tag_key=self.length_tag_key, frame_len_tag_key=self.length_tag_key, bits_per_header_sym=header_mod.bits_per_symbol(), bits_per_payload_sym=payload_mod.bits_per_symbol(), scramble_header=False))
         self.set_hdr_format(digital.header_format_ofdm(self.occupied_carriers, 1, self.length_tag_key,))
 
     def get_header_mod(self):

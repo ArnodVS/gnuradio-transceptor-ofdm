@@ -97,11 +97,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1192, 284)</value>
+      <value>(1176, 132)</value>
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>control@0: 0,2,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -160,11 +160,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1192, 12)</value>
+      <value>(1024, 4)</value>
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>control@0: 0,0,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -242,7 +242,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>0.1</value>
+      <value>0.15</value>
     </param>
     <param>
       <key>_enabled</key>
@@ -250,11 +250,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1192, 148)</value>
+      <value>(1176, 4)</value>
     </param>
     <param>
       <key>gui_hint</key>
-      <value></value>
+      <value>control@0: 0,1,1,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -336,7 +336,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(216, 1356)</value>
+      <value>(368, 132)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -363,7 +363,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(656, 1236)</value>
+      <value>(184, 132)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -375,7 +375,7 @@
     </param>
     <param>
       <key>value</key>
-      <value>digital.packet_header_ofdm(occupied_carriers, n_syms=1, len_tag_key=packet_length_tag_key, frame_len_tag_key=length_tag_key, bits_per_header_sym=header_mod.bits_per_symbol(), bits_per_payload_sym=payload_mod.bits_per_symbol(), scramble_header=False)</value>
+      <value>digital.packet_header_ofdm(occupied_carriers, n_syms=1, len_tag_key=length_tag_key, frame_len_tag_key=length_tag_key, bits_per_header_sym=header_mod.bits_per_symbol(), bits_per_payload_sym=payload_mod.bits_per_symbol(), scramble_header=False)</value>
     </param>
   </block>
   <block>
@@ -498,34 +498,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(840, 1236)</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>packet_length_tag_key</value>
-    </param>
-    <param>
-      <key>value</key>
-      <value>"packet_len"</value>
-    </param>
-  </block>
-  <block>
-    <key>variable</key>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(400, 1356)</value>
+      <value>(552, 132)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -792,7 +765,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(8, 204)</value>
+      <value>(8, 236)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1020,7 +993,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(624, 268)</value>
+      <value>(616, 324)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1079,7 +1052,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(848, 196)</value>
+      <value>(840, 252)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1185,7 +1158,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(168, 220)</value>
+      <value>(168, 252)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1346,7 +1319,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(520, 488)</value>
+      <value>(496, 440)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1405,7 +1378,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(760, 420)</value>
+      <value>(736, 436)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1441,6 +1414,121 @@
     </param>
   </block>
   <block>
+    <key>qtgui_tab_widget</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(736, 132)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>control</value>
+    </param>
+    <param>
+      <key>label0</key>
+      <value>Controllers</value>
+    </param>
+    <param>
+      <key>label1</key>
+      <value></value>
+    </param>
+    <param>
+      <key>label10</key>
+      <value>Tab 10</value>
+    </param>
+    <param>
+      <key>label11</key>
+      <value>Tab 11</value>
+    </param>
+    <param>
+      <key>label12</key>
+      <value>Tab 12</value>
+    </param>
+    <param>
+      <key>label13</key>
+      <value>Tab 13</value>
+    </param>
+    <param>
+      <key>label14</key>
+      <value>Tab 14</value>
+    </param>
+    <param>
+      <key>label15</key>
+      <value>Tab 15</value>
+    </param>
+    <param>
+      <key>label16</key>
+      <value>Tab 16</value>
+    </param>
+    <param>
+      <key>label17</key>
+      <value>Tab 17</value>
+    </param>
+    <param>
+      <key>label18</key>
+      <value>Tab 18</value>
+    </param>
+    <param>
+      <key>label19</key>
+      <value>Tab 19</value>
+    </param>
+    <param>
+      <key>label2</key>
+      <value></value>
+    </param>
+    <param>
+      <key>label3</key>
+      <value></value>
+    </param>
+    <param>
+      <key>label4</key>
+      <value>Tab 4</value>
+    </param>
+    <param>
+      <key>label5</key>
+      <value>Tab 5</value>
+    </param>
+    <param>
+      <key>label6</key>
+      <value>Tab 6</value>
+    </param>
+    <param>
+      <key>label7</key>
+      <value>Tab 7</value>
+    </param>
+    <param>
+      <key>label8</key>
+      <value>Tab 8</value>
+    </param>
+    <param>
+      <key>label9</key>
+      <value>Tab 9</value>
+    </param>
+    <param>
+      <key>num_tabs</key>
+      <value>1</value>
+    </param>
+  </block>
+  <block>
     <key>digital_chunks_to_symbols_xx</key>
     <param>
       <key>alias</key>
@@ -1464,7 +1552,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(280, 412)</value>
+      <value>(256, 428)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1523,7 +1611,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(248, 508)</value>
+      <value>(224, 524)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1664,7 +1752,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(384, 212)</value>
+      <value>(384, 244)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2388,7 +2476,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(624, 196)</value>
+      <value>(616, 252)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2612,7 +2700,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(1040, 204)</value>
+      <value>(1032, 260)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -2655,705 +2743,11 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(520, 404)</value>
+      <value>(904, 420)</value>
     </param>
     <param>
       <key>gui_hint</key>
-      <value>qtgui_tab_widget_0@1</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>qtgui_const_sink_x_0</value>
-    </param>
-    <param>
-      <key>legend</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alpha1</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color1</key>
-      <value>"blue"</value>
-    </param>
-    <param>
-      <key>label1</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker1</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style1</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width1</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha10</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color10</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label10</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker10</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style10</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width10</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha2</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color2</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label2</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker2</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style2</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width2</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha3</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color3</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label3</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker3</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style3</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width3</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha4</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color4</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label4</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker4</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style4</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width4</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha5</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color5</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label5</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker5</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style5</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width5</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha6</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color6</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label6</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker6</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style6</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width6</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha7</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color7</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label7</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker7</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style7</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width7</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha8</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color8</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label8</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker8</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style8</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width8</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha9</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color9</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label9</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker9</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style9</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width9</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>name</key>
-      <value>"Header Mod"</value>
-    </param>
-    <param>
-      <key>nconnections</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>size</key>
-      <value>1024</value>
-    </param>
-    <param>
-      <key>tr_chan</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>tr_level</key>
-      <value>0.0</value>
-    </param>
-    <param>
-      <key>tr_mode</key>
-      <value>qtgui.TRIG_MODE_FREE</value>
-    </param>
-    <param>
-      <key>tr_slope</key>
-      <value>qtgui.TRIG_SLOPE_POS</value>
-    </param>
-    <param>
-      <key>tr_tag</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>update_time</key>
-      <value>0.10</value>
-    </param>
-    <param>
-      <key>xmax</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>xmin</key>
-      <value>-2</value>
-    </param>
-    <param>
-      <key>ymax</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>ymin</key>
-      <value>-2</value>
-    </param>
-  </block>
-  <block>
-    <key>qtgui_const_sink_x</key>
-    <param>
-      <key>autoscale</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>axislabels</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(504, 572)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value>qtgui_tab_widget_0@2</value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>grid</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>qtgui_const_sink_x_0_0</value>
-    </param>
-    <param>
-      <key>legend</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alpha1</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color1</key>
-      <value>"blue"</value>
-    </param>
-    <param>
-      <key>label1</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker1</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style1</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width1</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha10</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color10</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label10</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker10</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style10</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width10</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha2</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color2</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label2</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker2</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style2</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width2</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha3</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color3</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label3</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker3</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style3</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width3</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha4</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color4</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label4</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker4</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style4</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width4</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha5</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color5</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label5</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker5</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style5</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width5</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha6</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color6</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label6</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker6</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style6</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width6</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha7</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color7</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label7</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker7</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style7</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width7</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha8</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color8</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label8</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker8</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style8</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width8</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>alpha9</key>
-      <value>1.0</value>
-    </param>
-    <param>
-      <key>color9</key>
-      <value>"red"</value>
-    </param>
-    <param>
-      <key>label9</key>
-      <value></value>
-    </param>
-    <param>
-      <key>marker9</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>style9</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>width9</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>name</key>
-      <value>"Payload Mod"</value>
-    </param>
-    <param>
-      <key>nconnections</key>
-      <value>1</value>
-    </param>
-    <param>
-      <key>size</key>
-      <value>1024</value>
-    </param>
-    <param>
-      <key>tr_chan</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>tr_level</key>
-      <value>0.0</value>
-    </param>
-    <param>
-      <key>tr_mode</key>
-      <value>qtgui.TRIG_MODE_FREE</value>
-    </param>
-    <param>
-      <key>tr_slope</key>
-      <value>qtgui.TRIG_SLOPE_POS</value>
-    </param>
-    <param>
-      <key>tr_tag</key>
-      <value>""</value>
-    </param>
-    <param>
-      <key>type</key>
-      <value>complex</value>
-    </param>
-    <param>
-      <key>update_time</key>
-      <value>0.10</value>
-    </param>
-    <param>
-      <key>xmax</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>xmin</key>
-      <value>-2</value>
-    </param>
-    <param>
-      <key>ymax</key>
-      <value>2</value>
-    </param>
-    <param>
-      <key>ymin</key>
-      <value>-2</value>
-    </param>
-  </block>
-  <block>
-    <key>qtgui_const_sink_x</key>
-    <param>
-      <key>autoscale</key>
-      <value>False</value>
-    </param>
-    <param>
-      <key>axislabels</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>affinity</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(928, 404)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value>qtgui_tab_widget_0@3</value>
+      <value>tx@1: 0,0</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -3700,7 +3094,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value>qtgui_tab_widget_1@1</value>
+      <value>rx@1: 0,1</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4047,7 +3441,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value>qtgui_tab_widget_1@2</value>
+      <value>rx@1: 0,0</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4366,7 +3760,7 @@
     <key>qtgui_freq_sink_x</key>
     <param>
       <key>autoscale</key>
-      <value>True</value>
+      <value>False</value>
     </param>
     <param>
       <key>average</key>
@@ -4414,7 +3808,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value>qtgui_tab_widget_0@0</value>
+      <value>tx@0: 0,0</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -4662,236 +4056,6 @@
     </param>
   </block>
   <block>
-    <key>qtgui_tab_widget</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1048, 12)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>qtgui_tab_widget_0</value>
-    </param>
-    <param>
-      <key>label0</key>
-      <value>Spectrum</value>
-    </param>
-    <param>
-      <key>label1</key>
-      <value>Header Map</value>
-    </param>
-    <param>
-      <key>label10</key>
-      <value>Tab 10</value>
-    </param>
-    <param>
-      <key>label11</key>
-      <value>Tab 11</value>
-    </param>
-    <param>
-      <key>label12</key>
-      <value>Tab 12</value>
-    </param>
-    <param>
-      <key>label13</key>
-      <value>Tab 13</value>
-    </param>
-    <param>
-      <key>label14</key>
-      <value>Tab 14</value>
-    </param>
-    <param>
-      <key>label15</key>
-      <value>Tab 15</value>
-    </param>
-    <param>
-      <key>label16</key>
-      <value>Tab 16</value>
-    </param>
-    <param>
-      <key>label17</key>
-      <value>Tab 17</value>
-    </param>
-    <param>
-      <key>label18</key>
-      <value>Tab 18</value>
-    </param>
-    <param>
-      <key>label19</key>
-      <value>Tab 19</value>
-    </param>
-    <param>
-      <key>label2</key>
-      <value>Payload Map</value>
-    </param>
-    <param>
-      <key>label3</key>
-      <value>Multiplex Map</value>
-    </param>
-    <param>
-      <key>label4</key>
-      <value>Tab 4</value>
-    </param>
-    <param>
-      <key>label5</key>
-      <value>Tab 5</value>
-    </param>
-    <param>
-      <key>label6</key>
-      <value>Tab 6</value>
-    </param>
-    <param>
-      <key>label7</key>
-      <value>Tab 7</value>
-    </param>
-    <param>
-      <key>label8</key>
-      <value>Tab 8</value>
-    </param>
-    <param>
-      <key>label9</key>
-      <value>Tab 9</value>
-    </param>
-    <param>
-      <key>num_tabs</key>
-      <value>4</value>
-    </param>
-  </block>
-  <block>
-    <key>qtgui_tab_widget</key>
-    <param>
-      <key>alias</key>
-      <value></value>
-    </param>
-    <param>
-      <key>comment</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_enabled</key>
-      <value>True</value>
-    </param>
-    <param>
-      <key>_coordinate</key>
-      <value>(1104, 1612)</value>
-    </param>
-    <param>
-      <key>gui_hint</key>
-      <value></value>
-    </param>
-    <param>
-      <key>_rotation</key>
-      <value>0</value>
-    </param>
-    <param>
-      <key>id</key>
-      <value>qtgui_tab_widget_1</value>
-    </param>
-    <param>
-      <key>label0</key>
-      <value>Rx Time</value>
-    </param>
-    <param>
-      <key>label1</key>
-      <value>Rx Header Mod</value>
-    </param>
-    <param>
-      <key>label10</key>
-      <value>Tab 10</value>
-    </param>
-    <param>
-      <key>label11</key>
-      <value>Tab 11</value>
-    </param>
-    <param>
-      <key>label12</key>
-      <value>Tab 12</value>
-    </param>
-    <param>
-      <key>label13</key>
-      <value>Tab 13</value>
-    </param>
-    <param>
-      <key>label14</key>
-      <value>Tab 14</value>
-    </param>
-    <param>
-      <key>label15</key>
-      <value>Tab 15</value>
-    </param>
-    <param>
-      <key>label16</key>
-      <value>Tab 16</value>
-    </param>
-    <param>
-      <key>label17</key>
-      <value>Tab 17</value>
-    </param>
-    <param>
-      <key>label18</key>
-      <value>Tab 18</value>
-    </param>
-    <param>
-      <key>label19</key>
-      <value>Tab 19</value>
-    </param>
-    <param>
-      <key>label2</key>
-      <value>Rx Paylaod Mod</value>
-    </param>
-    <param>
-      <key>label3</key>
-      <value>Tab 3</value>
-    </param>
-    <param>
-      <key>label4</key>
-      <value>Tab 4</value>
-    </param>
-    <param>
-      <key>label5</key>
-      <value>Tab 5</value>
-    </param>
-    <param>
-      <key>label6</key>
-      <value>Tab 6</value>
-    </param>
-    <param>
-      <key>label7</key>
-      <value>Tab 7</value>
-    </param>
-    <param>
-      <key>label8</key>
-      <value>Tab 8</value>
-    </param>
-    <param>
-      <key>label9</key>
-      <value>Tab 9</value>
-    </param>
-    <param>
-      <key>num_tabs</key>
-      <value>3</value>
-    </param>
-  </block>
-  <block>
     <key>qtgui_time_sink_x</key>
     <param>
       <key>autoscale</key>
@@ -4931,7 +4095,7 @@
     </param>
     <param>
       <key>gui_hint</key>
-      <value>qtgui_tab_widget_1@0</value>
+      <value>rx@0: 0,0</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5259,6 +4423,236 @@
     </param>
   </block>
   <block>
+    <key>qtgui_tab_widget</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(1024, 132)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>rx</value>
+    </param>
+    <param>
+      <key>label0</key>
+      <value>Time Rx</value>
+    </param>
+    <param>
+      <key>label1</key>
+      <value>Constellation Rx</value>
+    </param>
+    <param>
+      <key>label10</key>
+      <value>Tab 10</value>
+    </param>
+    <param>
+      <key>label11</key>
+      <value>Tab 11</value>
+    </param>
+    <param>
+      <key>label12</key>
+      <value>Tab 12</value>
+    </param>
+    <param>
+      <key>label13</key>
+      <value>Tab 13</value>
+    </param>
+    <param>
+      <key>label14</key>
+      <value>Tab 14</value>
+    </param>
+    <param>
+      <key>label15</key>
+      <value>Tab 15</value>
+    </param>
+    <param>
+      <key>label16</key>
+      <value>Tab 16</value>
+    </param>
+    <param>
+      <key>label17</key>
+      <value>Tab 17</value>
+    </param>
+    <param>
+      <key>label18</key>
+      <value>Tab 18</value>
+    </param>
+    <param>
+      <key>label19</key>
+      <value>Tab 19</value>
+    </param>
+    <param>
+      <key>label2</key>
+      <value></value>
+    </param>
+    <param>
+      <key>label3</key>
+      <value>Multiplex Map</value>
+    </param>
+    <param>
+      <key>label4</key>
+      <value>Tab 4</value>
+    </param>
+    <param>
+      <key>label5</key>
+      <value>Tab 5</value>
+    </param>
+    <param>
+      <key>label6</key>
+      <value>Tab 6</value>
+    </param>
+    <param>
+      <key>label7</key>
+      <value>Tab 7</value>
+    </param>
+    <param>
+      <key>label8</key>
+      <value>Tab 8</value>
+    </param>
+    <param>
+      <key>label9</key>
+      <value>Tab 9</value>
+    </param>
+    <param>
+      <key>num_tabs</key>
+      <value>2</value>
+    </param>
+  </block>
+  <block>
+    <key>qtgui_tab_widget</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(872, 132)</value>
+    </param>
+    <param>
+      <key>gui_hint</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>tx</value>
+    </param>
+    <param>
+      <key>label0</key>
+      <value>Spectrum Tx</value>
+    </param>
+    <param>
+      <key>label1</key>
+      <value>Constellation Tx</value>
+    </param>
+    <param>
+      <key>label10</key>
+      <value>Tab 10</value>
+    </param>
+    <param>
+      <key>label11</key>
+      <value>Tab 11</value>
+    </param>
+    <param>
+      <key>label12</key>
+      <value>Tab 12</value>
+    </param>
+    <param>
+      <key>label13</key>
+      <value>Tab 13</value>
+    </param>
+    <param>
+      <key>label14</key>
+      <value>Tab 14</value>
+    </param>
+    <param>
+      <key>label15</key>
+      <value>Tab 15</value>
+    </param>
+    <param>
+      <key>label16</key>
+      <value>Tab 16</value>
+    </param>
+    <param>
+      <key>label17</key>
+      <value>Tab 17</value>
+    </param>
+    <param>
+      <key>label18</key>
+      <value>Tab 18</value>
+    </param>
+    <param>
+      <key>label19</key>
+      <value>Tab 19</value>
+    </param>
+    <param>
+      <key>label2</key>
+      <value></value>
+    </param>
+    <param>
+      <key>label3</key>
+      <value></value>
+    </param>
+    <param>
+      <key>label4</key>
+      <value>Tab 4</value>
+    </param>
+    <param>
+      <key>label5</key>
+      <value>Tab 5</value>
+    </param>
+    <param>
+      <key>label6</key>
+      <value>Tab 6</value>
+    </param>
+    <param>
+      <key>label7</key>
+      <value>Tab 7</value>
+    </param>
+    <param>
+      <key>label8</key>
+      <value>Tab 8</value>
+    </param>
+    <param>
+      <key>label9</key>
+      <value>Tab 9</value>
+    </param>
+    <param>
+      <key>num_tabs</key>
+      <value>2</value>
+    </param>
+  </block>
+  <block>
     <key>virtual_sink</key>
     <param>
       <key>comment</key>
@@ -5297,7 +4691,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(816, 276)</value>
+      <value>(824, 332)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5324,7 +4718,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(760, 500)</value>
+      <value>(736, 516)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5486,7 +4880,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(40, 420)</value>
+      <value>(16, 436)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5513,7 +4907,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(40, 516)</value>
+      <value>(16, 532)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -5808,22 +5202,10 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>digital_chunks_to_symbols_xx_0</source_block_id>
-    <sink_block_id>qtgui_const_sink_x_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
-  </connection>
-  <connection>
     <source_block_id>digital_chunks_to_symbols_xx_0_0</source_block_id>
     <sink_block_id>blocks_tagged_stream_mux_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>1</sink_key>
-  </connection>
-  <connection>
-    <source_block_id>digital_chunks_to_symbols_xx_0_0</source_block_id>
-    <sink_block_id>qtgui_const_sink_x_0_0</sink_block_id>
-    <source_key>0</source_key>
-    <sink_key>0</sink_key>
   </connection>
   <connection>
     <source_block_id>digital_constellation_decoder_cb_0</source_block_id>
