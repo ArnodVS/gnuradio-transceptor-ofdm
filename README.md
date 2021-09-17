@@ -17,4 +17,4 @@ El algoritmo trx-ofdm.py proporciona símbolos OFDM con 54 subportadoras, de las
 4. Adicionalmente se puede modificar el diagrama de flujos trx-ofdm.grc o directamente en el código trx-ofdm.py.
 
 ### Redacción Futura
-Este algoritmo OFDM puede ser modificado desde su diagrama de flujos para integrar el control de hardware SDR, basta con separar el Tx y el RX e integrar un bloque de control SDR (como los bloques UHD:USRP) en cada diagrama de flujos separado.
+Este algoritmo OFDM puede ser modificado desde su diagrama de flujos para integrar el control de hardware SDR, basta con separar el Tx y el RX e integrar un bloque de control SDR (como los bloques UHD:USRP) en cada diagrama de flujos separado. Esto con la intención de generar un enlace RF con simbolos OFDM  en bandas de Wi-Fi.
