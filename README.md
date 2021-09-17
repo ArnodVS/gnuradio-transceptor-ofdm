@@ -5,7 +5,7 @@ Este proyecto fue compialdo en GNU Radio Companion 3.7.11 con el interprete de P
 El diagrama de flujos trx-ofdm.grc contiene el procesamiento que lleva acabo un transceptor OFDM con un mapa QPSK para la carga útil y BPSK para sus encabezados.
 
 ### Introducción
-El algoritmo trx-ofdm.py proporciona símbolos OFDM con 54 subportadoras, de las cuales 4 son portadoras piloto y 48 son portadoras con carga útil. Las 54 portadoras son moduladas por el bloque ifft con una longitud de ventana de 64 para procesar todas las portadoras.
+El algoritmo trx-ofdm.py proporciona símbolos OFDM con 54 subportadoras, de las cuales 4 son portadoras piloto y 48 son portadoras con carga útil. Las 54 portadoras son moduladas por el bloque <ifft> con una longitud de ventana de 64 para procesar todas las portadoras.
 
 ### Dependencias
 - GNU Radio Companion 3.7.11
